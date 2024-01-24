@@ -19,8 +19,7 @@ dict_EN_to_JP = df_trans.set_index('nameEN')['nameJP'].to_dict()
 
 # レイアウトの作成
 my_app.layout = dbc.Container([
-    dbc.Row(
-            [
+    dbc.Row([
                 dbc.Col(
                     html.H1("パルワールド　配合検索",className="text-center"),
                     style={"background-color": "pink"}
@@ -29,6 +28,7 @@ my_app.layout = dbc.Container([
             className="h-30"
         ),
     dbc.Row([
+        html.H4("親からの配合検索"),
         dbc.Col([
             html.Label('親1:'),
             dcc.Dropdown(
@@ -50,6 +50,7 @@ my_app.layout = dbc.Container([
     ], className='mb-3', style={'background-color': '#f2f2f2', 'padding': '15px'}),
 
     dbc.Row([
+        html.H4("子からの配合逆引き検索"),
         dbc.Col([
            dbc.Col([
             html.Label('検索対象の子:'),
@@ -59,7 +60,7 @@ my_app.layout = dbc.Container([
                 style={'width': '200px'}
             )], width=3),
             dbc.Col([
-                html.Label('絞り込みの親:'),  # 新しいドロップダウン
+                html.Label('絞り込みの親(片方の親を指定して検索):'), 
                 dcc.Dropdown(
                     id='filter-parent-dropdown',
                     options=[{'label': key, 'value': key} for key in df_trans['nameJP']],
