@@ -6,6 +6,7 @@ from dash.dependencies import Input, Output, State
 
 # Dashアプリケーションの初期化
 my_app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+my_app.title = 'パルワールド　配合検索'
 server = my_app.server
 
 # CSVファイルからデータ読み込み
