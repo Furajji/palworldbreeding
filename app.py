@@ -4,6 +4,10 @@ from dash import dcc, html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 
+# Dashアプリケーションの初期化
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
+
 # CSVファイルからデータ読み込み
 df_trans = pd.read_csv('csv/pal_tr.csv')
 df_combi = pd.read_csv('csv/palEN_combination.csv', index_col='pal').dropna()
@@ -11,9 +15,6 @@ df_combi = pd.read_csv('csv/palEN_combination.csv', index_col='pal').dropna()
 # 辞書の作成
 dict_JP_to_EN = df_trans.set_index('nameJP')['nameEN'].to_dict()
 dict_EN_to_JP = df_trans.set_index('nameEN')['nameJP'].to_dict()
-
-# Dashアプリケーションの初期化
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # レイアウトの作成
 app.layout = dbc.Container([
