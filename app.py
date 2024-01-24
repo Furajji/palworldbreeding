@@ -5,8 +5,8 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 
 # Dashアプリケーションの初期化
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-server = app.server
+my_app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = my_app.server
 
 # CSVファイルからデータ読み込み
 df_trans = pd.read_csv('csv/pal_tr.csv')
