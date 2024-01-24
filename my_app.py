@@ -120,9 +120,9 @@ def search_combinations(n_clicks, search_child, filter_parent):
     # 指定したtarget_elementを含む組み合わせを除外
     result_combinations = list(
         set((row, col) for row in result_indices for col in result_columns)
-        - {(target_element, col) for col in result_columns}  # target_element を左に含む組み合わせを除外
-        - {(row, target_element) for row in result_indices}  # target_element を右に含む組み合わせを除外
-        - {(target_element, target_element)}  # target_element を両方にもつ組み合わせを除外
+        # - {(target_element, col) for col in result_columns}  # target_element を左に含む組み合わせを除外
+        # - {(row, target_element) for row in result_indices}  # target_element を右に含む組み合わせを除外
+        # - {(target_element, target_element)}  # target_element を両方にもつ組み合わせを除外
     )
     result_combinations_JP = [(dict_EN_to_JP[i],dict_EN_to_JP[j]) for i,j in result_combinations]
     
@@ -132,7 +132,10 @@ def search_combinations(n_clicks, search_child, filter_parent):
     if filter_parent is not None:
         result_dict = pd.DataFrame(result_combinations_JP).to_dict('records')
         pallist = [row[1] for row in result_dict]
-        message = f"{pallist}"
+        if len(pallist) == 0:
+            message = f"候補が見つかりませんでした"
+        else:
+            message = f"{pallist}"
     
     return message
 

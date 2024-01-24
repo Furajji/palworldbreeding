@@ -20,7 +20,8 @@ child = df_combi.at[parent1,parent2]
 
 print('親',dict_EN_to_JP.get(parent1),dict_EN_to_JP.get(parent2),'子',dict_EN_to_JP.get(child))
 
-input3 = 'モコロン'
+# 逆検索
+input3 = 'カバネドリ'
 child1 = dict_JP_to_EN.get(input3)
 
 # 検索する要素
@@ -31,7 +32,7 @@ result_indices = df_combi.index[df_combi.eq(target_element).any(axis=1)].tolist(
 result_columns = df_combi.columns[df_combi.eq(target_element).any()].tolist()
 
 # 検索対象の要素
-filter_parent = 'ミルフィー'
+filter_parent = 'アズレーン'
 
 # DataFrameから要素を検索して、行と列の組み合わせをリストで取得
 result_indices = df_combi.index[df_combi.eq(target_element).any(axis=1)].tolist()
