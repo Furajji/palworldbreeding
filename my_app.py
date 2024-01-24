@@ -17,7 +17,7 @@ dict_JP_to_EN = df_trans.set_index('nameJP')['nameEN'].to_dict()
 dict_EN_to_JP = df_trans.set_index('nameEN')['nameJP'].to_dict()
 
 # レイアウトの作成
-app.layout = dbc.Container([
+my_app.layout = dbc.Container([
     dbc.Row(
             [
                 dbc.Col(
@@ -77,7 +77,7 @@ app.layout = dbc.Container([
 ], fluid=True)
 
 # コールバックの作成
-@app.callback(
+@my_app.callback(
     Output('child-output', 'children'),
     [Input('parent1-dropdown', 'value'),
      Input('parent2-dropdown', 'value')],
@@ -91,7 +91,7 @@ def update_output(parent1, parent2):
 
     return f'{dict_EN_to_JP.get(child)}'
 
-@app.callback(
+@my_app.callback(
     Output('search-output', 'children'),
     [Input('search-button', 'n_clicks'),
     State('search-child-dropdown', 'value'),
@@ -136,4 +136,4 @@ def search_combinations(n_clicks, search_child, filter_parent):
     return message
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    my_app.run_server(debug=True)
