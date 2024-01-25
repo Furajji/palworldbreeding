@@ -11,7 +11,7 @@ palNo,nameJP,nameEN
 10,ペンタマ,Pengullet
 11,キャプペン,Penking
 12,パチグリ,Jolthog
-12,パチグリCryst,Jolthog Cryst
+12,コチグリ,Jolthog Cryst
 13,ナエモチ,Gumoss
 13,ナエモチSpecial,Gumoss (Special)
 14,タマモ,Vixy
@@ -25,7 +25,7 @@ palNo,nameJP,nameEN
 22,モグルン,Fuddler
 23,ヤミイカ,Killamari
 24,ニャオテト,Mau
-24,ニャオテトCryst,Mau Cryst
+24,チルテト,Mau Cryst
 25,ルミカイト,Celaray
 26,ガウルフ,Direhowl
 27,クルットリ,Tocotoco
@@ -123,7 +123,7 @@ palNo,nameJP,nameEN
 99,デスティング,Menasting
 100,アヌビス,Anubis
 101,レヴィドラ,Jormuntide
-101,レヴィドラIgnis,Jormuntide Ignis
+101,アグニドラ,Jormuntide Ignis
 102,スザク,Suzaku
 102,スザクAqua,Suzaku Aqua
 103,エレパンダ,Grizzbolt
